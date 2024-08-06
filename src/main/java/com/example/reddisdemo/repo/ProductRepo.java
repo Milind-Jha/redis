@@ -28,7 +28,6 @@ public class ProductRepo {
     }
 
     public Product findProductById(String id) throws HttpClientErrorException{
-        System.out.println("Data taken from db");
         Product product = (Product) redisTemplate.opsForHash().get(HASH_KEY, id);
         System.out.println("product : "+ product);
         return product;
